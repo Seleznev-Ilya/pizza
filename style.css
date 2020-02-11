@@ -61,3 +61,119 @@
 .test{
     display: none;
 }
+/*____________________________________________________________________*/
+header{
+    margin: 70px 0;
+}
+h1{
+    text-align: center;
+}
+
+#test {
+    transition: 1s;
+    max-width: 383px;
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 1;
+}
+
+#test .item1, #test .item2 {
+    box-sizing: border-box;
+    height: 40px;
+    width: 160px;
+    vertical-align: middle;
+    text-align: center;
+    -moz-box-sizing: content-box;
+    background-color: aliceblue;
+
+}
+#test .item1{
+    border-radius: 0 20px 0 18px;
+    border:1px solid goldenrod;
+}
+#test .item2{
+    border-radius:  20px 0 18px 0;
+    border:1px solid goldenrod;
+}
+
+.item1 span {
+    text-decoration: none;
+    display: inline-block;
+    transform: translateY(16px);
+    color: brown;
+    background-color: aliceblue;
+    font-family: 'Raleway', sans-serif;
+}
+
+.item2 span {
+    text-decoration: none;
+    display: inline-block;
+    transform: translateY(16px);
+    color: cornflowerblue;
+    background-color: aliceblue;
+    font-family: 'Raleway', sans-serif;
+}
+
+.wrapper_test {
+    position: relative;
+}
+
+#buttonH1 {
+    font-family: 'Raleway', sans-serif;
+    vertical-align: middle;
+    text-align: center;
+    box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    max-width: 384px;
+    margin: 20px auto 0;
+    position: relative;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: orange;
+    padding: 1em 2em;
+    border: none;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+    outline: none;
+    overflow: hidden;
+    border-radius: 100px;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: 5;
+}
+
+#buttonH1 span {
+    position: relative;
+    pointer-events: none;
+}
+
+#buttonH1::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: var(--w);
+    height: var(--w);
+    background: radial-gradient(circle closest-side, sandybrown, transparent);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-transition: all 3s ease;
+    -moz-transition: all 3s ease;
+    -o-transition: all 3s ease;
+    transition: all 3s ease;
+}
+
+#buttonH1:hover::before {
+    --w: 450px;
+}
+

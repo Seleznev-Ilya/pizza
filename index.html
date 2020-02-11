@@ -10,6 +10,52 @@
    <title>Pizza</title>
 </head>
 <body>
+<header>
+   <h1>Papa_Pizza</h1>
+
+   <div class = "container">
+      <div class = "wrapper_test">
+         <button id = "buttonH1">
+            <span>Уже знаете какую выбрать?</span>
+         </button>
+         <div id = "test">
+            <a href = "#">
+               <div class = "item1"><span>Состав</span></div>
+            </a>
+            <a href = "#">
+               <div class = "item2"><span>Цена/Название</span></div>
+            </a>
+         </div>
+      </div>
+
+   </div>
+
+
+</header>
+
 <script src="script.js"></script>
+<script>
+    document.getElementById('buttonH1').onclick = down;
+    document.querySelector('.item2').onclick = deletee;
+    document.querySelector('.item1').onclick = createCards;
+    function deletee(){
+        alert('Списо цены/названий \n в доработке');
+    }
+let switchB = 0;
+function down() {
+
+    let test = document.getElementById('test');
+    if(!switchB){
+        switchB = 1;
+        test.style.top= `${88}px`;
+        test.style.opacity= `${1}`;
+    } else{
+        switchB = 0;
+        test.style.top= `${0}px`;
+        test.style.opacity= `${0}`;
+    }
+
+}
+</script>
 </body>
 </html>

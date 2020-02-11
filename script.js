@@ -330,7 +330,7 @@ function createCards() {
     };
 }
 
-createCards();
+// createCards();
 
 
 
