@@ -1,0 +1,63 @@
+*{
+    font-family: 'Sriracha', cursive;
+}
+.container {
+    margin: 0 auto;
+    max-width: 77%;
+    /*max-width: 951px;*/
+    padding: 10px;
+}
+.goods_wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    /*justify-content: space-between;*/
+    /*justify-content: center;*/
+    margin: 0 10%;
+    width: 100%;
+}
+.goods_wrapper_item{
+    /*display: inline-block;*/
+    min-width: 25%;
+    margin: 11px;
+    padding: 5px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.goods_wrapper_item:hover{
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    margin: 10.5px;
+}
+.img_pizza{
+    margin: 0 auto;
+    display: block;
+    width: 215px;
+    height: 200px;
+}
+.radio_wrap{
+    text-align: center;
+    margin: 15px;
+    padding: 5px;
+    border-bottom:1px solid #666666;
+
+}
+#btn{
+    border:1px solid goldenrod;
+    border-radius: 0 20px 0 18px;
+    font-size: 17px;
+    padding: 2px 19px;
+    outline: none;
+}
+#btn:hover{
+    background-color: gold;
+}
+.cheese1, .meat2, .tomato3{
+    margin: 5px;
+}
+.hide{
+    display: none;
+}
+.test{
+    display: none;
+}
