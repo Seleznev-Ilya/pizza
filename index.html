@@ -2,11 +2,11 @@
 <html lang = "en">
 <head>
    <meta charset = "UTF-8">
-   <link rel = "stylesheet" href = "style.css">
+   <link href = "style.css" rel = "stylesheet">
+   <link href = "style2.css" rel = "stylesheet">
    <link href = "normalize.css-master/normalize.css" rel = "stylesheet" type = "text/css">
    <meta content = "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name = "viewport">
-   <link href="https://fonts.googleapis.com/css?family=Sriracha&display=swap" rel="stylesheet">
-   <link rel = "stylesheet" href = "common/common.css"> <!--header/footer-->
+   <link href = "https://fonts.googleapis.com/css?family=Sriracha&display=swap" rel = "stylesheet">
    <title>Pizza</title>
 </head>
 <body>
@@ -33,29 +33,30 @@
 
 </header>
 
-<script src="script.js"></script>
+<script src = "script.js"></script>
 <script>
     document.getElementById('buttonH1').onclick = down;
-    document.querySelector('.item2').onclick = deletee;
+    document.querySelector('.item2').onclick = listCards;
     document.querySelector('.item1').onclick = createCards;
-    function deletee(){
-        alert('Список цены/названий \n в доработке');
-    }
-let switchB = 0;
-function down() {
+    let globalContainer = document.createElement('div');
+    globalContainer.classList.add('globalContainer');
+    document.body.append(globalContainer);
 
-    let test = document.getElementById('test');
-    if(!switchB){
-        switchB = 1;
-        test.style.top= `${88}px`;
-        test.style.opacity= `${1}`;
-    } else{
-        switchB = 0;
-        test.style.top= `${0}px`;
-        test.style.opacity= `${0}`;
+    let switchB = 0;
+
+    function down() {
+        globalContainer.innerHTML = '';
+
+        let test = document.getElementById('test');
+        if (!switchB) {
+            switchB = 1;
+            test.style.top = `${88}px`;
+            test.style.opacity = `${1}`;
+
+        }
+
     }
 
-}
 </script>
 </body>
 </html>

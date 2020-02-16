@@ -7,7 +7,7 @@ const goods = {
             tomato: 4,
         },
         cal: 1000,
-        cost: 100,
+        cost: 130,
         img: `https://friendlystock.com/wp-content/uploads/2019/12/8-sliced-pizza-cartoon-clipart.jpg`,
     },
     "2": {
@@ -40,7 +40,7 @@ const goods = {
             tomato: 0,
         },
         cal: 1000,
-        cost: 110,
+        cost: 69.5,
         img: `https://friendlystock.com/wp-content/uploads/2019/12/8-sliced-pizza-cartoon-clipart.jpg`,
     },
     "5": {
@@ -51,7 +51,7 @@ const goods = {
             tomato: 4,
         },
         cal: 1000,
-        cost: 110,
+        cost: 290,
         img: `https://friendlystock.com/wp-content/uploads/2019/12/8-sliced-pizza-cartoon-clipart.jpg`,
     },
     "6": {
@@ -62,7 +62,7 @@ const goods = {
             tomato: 4,
         },
         cal: 1000,
-        cost: 100,
+        cost: 99,
         img: `https://friendlystock.com/wp-content/uploads/2019/12/8-sliced-pizza-cartoon-clipart.jpg`,
     },
     "7": {
@@ -73,7 +73,7 @@ const goods = {
             tomato: 0,
         },
         cal: 1100,
-        cost: 110,
+        cost: 570,
         img: `https://friendlystock.com/wp-content/uploads/2019/12/8-sliced-pizza-cartoon-clipart.jpg`,
     },
     "8": {
@@ -84,7 +84,7 @@ const goods = {
             tomato: 4,
         },
         cal: 1000,
-        cost: 110,
+        cost: 230,
         img: `https://friendlystock.com/wp-content/uploads/2019/12/8-sliced-pizza-cartoon-clipart.jpg`,
     },
     "9": {
@@ -106,7 +106,7 @@ const goods = {
             tomato: 0,
         },
         cal: 1000,
-        cost: 110,
+        cost: 310,
         img: `https://friendlystock.com/wp-content/uploads/2019/12/8-sliced-pizza-cartoon-clipart.jpg`,
     },
     "11": {
@@ -176,8 +176,16 @@ const goods = {
         img: `https://friendlystock.com/wp-content/uploads/2019/12/8-sliced-pizza-cartoon-clipart.jpg`,
     }
 };
-
+let listDraw = 0;
 function createCards() {
+    function up() {
+        setTimeout(function () {
+            switchB = 0;
+            test.style.top= `${0}px`;
+            test.style.opacity= `${0}`;
+        },333)
+    }
+    up();
     let container = document.createElement('div');
     container.classList.add("container");
     let radioWrapper = document.createElement('div');
@@ -199,7 +207,7 @@ function createCards() {
     container.append(radioWrapper);
     radioWrapper.prepend(button);
     radioWrapper.append(form);
-    document.body.append(container);
+    globalContainer.append(container);
 
     function drow() {
         let wrapper = document.createElement('div');
@@ -258,7 +266,6 @@ function createCards() {
                     sum += goods[boxes]['composition'][arr[k]];
                 }
                 if (sum !== 3) {
-                    console.log(`${boxes} ${sum}`);
                     items[boxes - 1].classList.toggle('test');
                 }
             } else if (cheeseBox.checked && tomatoBox.checked) {// 1-3 = 5
@@ -267,7 +274,6 @@ function createCards() {
                     sum += goods[boxes]['composition'][arr[k]];
                 }
                 if (sum !== 5) {
-                    console.log(`${boxes} ${sum}`);
                     items[boxes - 1].classList.toggle('test');
                 }
             } else if (meatBox.checked && tomatoBox.checked) {// 2-3 = 6
@@ -276,7 +282,6 @@ function createCards() {
                     sum += goods[boxes]['composition'][arr[k]];
                 }
                 if (sum > 6 || sum !== 6) {
-                    console.log(`${boxes} ${sum}`);
                     items[boxes - 1].classList.toggle('test');
                 }
             } else if (cheeseBox.checked && meatBox.checked && tomatoBox.checked) { //1-2-3 =7
@@ -285,7 +290,6 @@ function createCards() {
                     sum += goods[boxes]['composition'][arr[k]];
                 }
                 if (false) {
-                    console.log(`${boxes} ${sum}`);
                     items[boxes - 1].classList.toggle('test');
                 }
             } else if (!cheeseBox.checked && !meatBox.checked && !tomatoBox.checked) {// 0 = 0
@@ -294,7 +298,6 @@ function createCards() {
                     sum += goods[boxes]['composition'][arr[k]];
                 }
                 if (true) {
-                    console.log(`${boxes} ${sum}`);
                     items[boxes - 1].classList.toggle('test');
                 }
             } else if (cheeseBox.checked && !meatBox.checked && !tomatoBox.checked) { //1 = 1
@@ -303,7 +306,6 @@ function createCards() {
                     sum += goods[boxes]['composition'][arr[k]];
                 }
                 if (sum !== 1) {
-                    console.log(`${boxes} ${sum}`);
                     items[boxes - 1].classList.toggle('test');
                 }
             } else if (!cheeseBox.checked && meatBox.checked && !tomatoBox.checked) { //2 = 2
@@ -312,7 +314,6 @@ function createCards() {
                     sum += goods[boxes]['composition'][arr[k]];
                 }
                 if (sum !== 2) {
-                    console.log(`${boxes} ${sum}`);
                     items[boxes - 1].classList.toggle('test');
                 }
             } else if (!cheeseBox.checked && !meatBox.checked && tomatoBox.checked) { //3 = 4
@@ -321,16 +322,163 @@ function createCards() {
                     sum += goods[boxes]['composition'][arr[k]];
                 }
                 if (sum !== 4) {
-                    console.log(`${boxes} ${sum}`);
                     items[boxes - 1].classList.toggle('test');
                 }
             }
         }
-        console.log('__________')
     };
 }
 
-// createCards();
+function listCards() {
+    function up() {
+        setTimeout(function () {
+            switchB = 0;
+            test.style.top= `${0}px`;
+            test.style.opacity= `${0}`;
+        },333)
+    }
+    up();
+    if (listDraw > 0){
+        container.innerHTML = '';
+    }
+
+    let arr = [];
+
+    function creatArr() {
+        for (let i = 1; i <= 16; i++) {
+            arr.push([goods[i].name, goods[i].cost]);
+        }
+    }
+
+    creatArr();
+
+    let container = document.createElement('div');
+    container.classList.add('container2');
+    function startList() {
+
+
+        if (listDraw === 0) {
+
+
+            let btnWrapper = document.createElement('div');
+            btnWrapper.classList.add('btnWrapper');
+
+
+            let btnName = document.createElement('div');
+            btnName.classList.add('name');
+            btnName.innerText = 'Название';
+            btnWrapper.append(btnName);
+
+
+            let btnPrice = document.createElement('div');
+            btnPrice.classList.add('price');
+            btnPrice.innerText = 'Цена';
+            btnWrapper.append(btnPrice);
+
+            globalContainer.append(btnWrapper);
+            draw();
+        }
+        listDraw+=1;
+
+
+    }
+
+    startList();
+
+
+    function creatPizza(i) {
+        let line = document.createElement('div');
+        line.classList.add('line');
+        let img = document.createElement('img');
+        img.src = 'img/pz.png';
+        img.alt = 'pizza';
+        line.append(img);
+
+        let nameOf = document.createElement('span');
+        nameOf.classList.add('span');
+
+        nameOf.innerHTML = `${arr[i][0]}:`;
+        line.append(nameOf);
+
+        let price = document.createElement('span');
+        price.classList.add('span');
+
+        price.innerHTML = `${arr[i][1]} grn`;
+        line.append(price);
+
+        container.append(line);
+
+    }
+
+
+    function draw() {
+        for (let i = 0; i < 16; i++) {
+            creatPizza(i);
+        }
+    }
+
+    globalContainer.append(container);
+
+
+    document.querySelector('.name').onclick = sortArrName;
+    document.querySelector('.price').onclick = sortArrPrice;
+
+    let i1 = 0;
+    let i2 = 0;
+
+    function sortArrName() {
+
+        container.innerHTML = '';
+
+
+        if (i1 === 0) {
+            arr.sort(function (a, b) {
+                b = b[0];
+                a = a[0];
+
+                return a > b ? 1 : -1;
+            });
+            i1 += 1;
+            draw();
+        } else {
+            arr.sort(function (a, b) {
+                b = b[0];
+                a = a[0];
+
+                return a < b ? 1 : -1;
+            });
+            i1 -= 1;
+            draw();
+        }
+
+    }
+
+    function sortArrPrice() {
+        container.innerHTML = '';
+
+        if (i2 === 0) {
+            arr.sort(function (a, b) {
+                b = b[1];
+                a = a[1];
+
+                return a > b ? 1 : -1;
+            });
+            i2 += 1;
+            draw();
+        } else {
+            arr.sort(function (a, b) {
+                b = b[1];
+                a = a[1];
+
+                return a < b ? 1 : -1;
+            });
+            i2 -= 1;
+            draw();
+        }
+    }
+
+
+}
 
 
 

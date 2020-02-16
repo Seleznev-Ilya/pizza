@@ -106,7 +106,7 @@ h1{
 .item1 span {
     text-decoration: none;
     display: inline-block;
-    transform: translateY(16px);
+    transform: translateY(9px);
     color: brown;
     background-color: aliceblue;
     font-family: 'Raleway', sans-serif;
@@ -115,7 +115,7 @@ h1{
 .item2 span {
     text-decoration: none;
     display: inline-block;
-    transform: translateY(16px);
+    transform: translateY(9px);
     color: cornflowerblue;
     background-color: aliceblue;
     font-family: 'Raleway', sans-serif;
